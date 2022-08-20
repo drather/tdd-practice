@@ -2,9 +2,8 @@ package com.example.tddpractice;
 
 import java.util.Objects;
 
-public class Dollar {
+public class Dollar extends Money {
 
-    private int amount;
 
     public Dollar(int amount) {
         this.amount = amount;

@@ -3,6 +3,7 @@ package com.example.tddpractice;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CurrencyTest {
     @Test
@@ -13,4 +14,10 @@ public class CurrencyTest {
         assertEquals("CHF", currency);
         assertEquals("USD", Money.dollar(1).currency());
     }
+
+    @Test
+    public void testDifferentClassEquality() {
+        assertTrue(new Money(10, "CHF").equals(new Franc(10, "CHF")));
+    }
+
 }

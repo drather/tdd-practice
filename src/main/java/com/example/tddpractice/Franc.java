@@ -3,13 +3,14 @@ package com.example.tddpractice;
 import java.util.Objects;
 
 public class Franc extends Money {
+    private String currency;
 
-    public Franc(int amount) {
-        this.amount = amount;
+    public Franc(int amount, String currency) {
+        super(amount, currency);
     }
 
     Money times(int multiplier) {
-        return new Franc(amount * multiplier);
+        return Money.franc(amount * multiplier);
     }
 
     @Override
@@ -24,4 +25,5 @@ public class Franc extends Money {
     public int hashCode() {
         return Objects.hash(amount);
     }
+
 }

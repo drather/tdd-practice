@@ -5,8 +5,9 @@ class Money implements Expression {
     protected int amount;
 
     @Override
-    public Money reduce(String to) {
-        return null;
+    public Money reduce(Bank bank, String to) {
+        int rate = bank.rate(currency, to);
+        return new Money(amount / rate, to);
     }
 
     Money(int amount, String currency) {

@@ -4,6 +4,11 @@ class Money implements Expression {
     protected String currency;
     protected int amount;
 
+    @Override
+    public Money reduce(String to) {
+        return null;
+    }
+
     Money(int amount, String currency) {
         this.amount = amount;
         this.currency = currency;
